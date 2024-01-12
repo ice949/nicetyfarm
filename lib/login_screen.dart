@@ -10,47 +10,75 @@ class LoginPage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<LoginPage> {
-  
-
   @override
   Widget build(BuildContext context) {
-    
-    return Column(
-      children: [
-        const Expanded(child: Image(image: AssetImage('assets/images/onboard_icon.png'))),
-        const Padding(
-          padding: EdgeInsets.only(top: 0, bottom: 16.0, left: 16.0, right: 16.0),
+    return Scaffold(
+      body: SafeArea(
+        child: Padding(
+          padding: EdgeInsets.all(12.0),
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Padding(
-                padding: EdgeInsets.all(15.0),
-                child: Text('WELCOME \n TO LOGIN PAGE', style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold, color: Colors.blue), textAlign: TextAlign.center,),
-              ),
-              Text('Experience the beauty of Greece!', style: TextStyle(fontSize: 15, fontWeight: FontWeight.normal, color: Colors.black), textAlign: TextAlign.center,)
-            ],
-          ),
-        ),
-        Padding(
-          padding: EdgeInsets.only(top: 0, bottom: 16.0, left: 16.0, right: 16.0),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              ElevatedButton(onPressed: () {},
-              style: ElevatedButton.styleFrom(
-                primary: Colors.blue,
-                onPrimary: Colors.blue,
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(20),
+              ClipRect(
+                // borderRadius: BorderRadius.circular(20.0),
+                child: Container(
+                  width: 100.0,
+                  height: 100.0,
+                  color: Colors.blue,
+                  child: const Icon(
+                    Icons.ac_unit,
+                    size: 70,
+                    color: Colors.white,
+                  ),
                 ),
-                minimumSize: Size(150, 50)),
-               child: const Text('LOGIN', style: TextStyle(fontSize: 15, fontWeight: FontWeight.normal, color: Colors.white), textAlign: TextAlign.center, ),),
-               TextButton(onPressed: () {},
-               child: const Text('REGISTER', style: TextStyle(fontSize: 15, fontWeight: FontWeight.normal, color: Colors.blue), textAlign: TextAlign.center, ),
-               )
+              ),
+              const Text(
+                "Welcome Back!",
+                style: TextStyle(fontSize: 25.0, color: Colors.blue, fontWeight: FontWeight.bold),
+              ),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [
+                  const Padding(
+                      padding: EdgeInsets.all(8.0),
+                      child: Expanded(
+                        child: TextField(
+                          decoration: InputDecoration(
+                              border: OutlineInputBorder(),
+                              hintText: "Email",
+                              labelStyle: TextStyle(
+                                
+                                  fontSize: 20.0, color: Colors.blue)),
+                        ),
+                      )),
+                  const Padding(
+                      padding: EdgeInsets.all(8.0),
+                      child: Expanded(
+                        child: TextField(
+                          decoration: InputDecoration(
+                              border: OutlineInputBorder(),
+                              hintText: "Password",
+                              labelStyle: TextStyle(
+                                
+                                  fontSize: 20.0, color: Colors.blue)),
+                        ),
+                      )),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Expanded(
+                      child: ElevatedButton(
+                          onPressed: () {},
+                          child: const Text("Login",
+                              style: TextStyle(
+                                  fontSize: 20.0, color: Colors.blue))),
+                    ),
+                  )
+                ],
+              ),
             ],
           ),
         ),
-      ],
+      ),
     );
-}
+  }
 }
