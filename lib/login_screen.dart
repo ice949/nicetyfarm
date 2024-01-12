@@ -1,16 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:nicetyfarm/login_screen.dart';
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
+class LoginPage extends StatefulWidget {
+  const LoginPage({super.key, required this.title});
 
   final String title;
 
   @override
-  State<MyHomePage> createState() => _MyHomePageState();
+  State<LoginPage> createState() => _MyHomePageState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class _MyHomePageState extends State<LoginPage> {
   
 
   @override
@@ -25,7 +24,7 @@ class _MyHomePageState extends State<MyHomePage> {
             children: [
               Padding(
                 padding: EdgeInsets.all(15.0),
-                child: Text('WELCOME \n TO SANTORINI', style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold, color: Colors.blue), textAlign: TextAlign.center,),
+                child: Text('WELCOME \n TO LOGIN PAGE', style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold, color: Colors.blue), textAlign: TextAlign.center,),
               ),
               Text('Experience the beauty of Greece!', style: TextStyle(fontSize: 15, fontWeight: FontWeight.normal, color: Colors.black), textAlign: TextAlign.center,)
             ],
@@ -36,16 +35,7 @@ class _MyHomePageState extends State<MyHomePage> {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              ElevatedButton(
-                onPressed: () {
-                  Navigator.of(context).push(
-    MaterialPageRoute(
-      builder: (context) => const LoginPage(title: "Login Page",),
-    ),
-  );
-                },
-                // ... other properties
-              
+              ElevatedButton(onPressed: () {},
               style: ElevatedButton.styleFrom(
                 primary: Colors.blue,
                 onPrimary: Colors.blue,
