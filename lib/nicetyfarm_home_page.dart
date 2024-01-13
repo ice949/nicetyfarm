@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:nicetyfarm/login_screen.dart';
+import 'package:nicetyfarm/register_screen.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
@@ -17,7 +18,8 @@ class _MyHomePageState extends State<MyHomePage> {
       body: Column(
         children: [
           const Expanded(
-              child: Image(image: AssetImage('assets/images/onboard_icon.png'))),
+              child:
+                  Image(image: AssetImage('assets/images/onboard_icon.png'))),
           const Padding(
             padding:
                 EdgeInsets.only(top: 0, bottom: 16.0, left: 16.0, right: 16.0),
@@ -30,7 +32,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     style: TextStyle(
                         fontSize: 30,
                         fontWeight: FontWeight.bold,
-                        color: Colors.blue),
+                        color: Color.fromARGB(255, 252, 41, 3)),
                     textAlign: TextAlign.center,
                   ),
                 ),
@@ -39,15 +41,15 @@ class _MyHomePageState extends State<MyHomePage> {
                   style: TextStyle(
                       fontSize: 15,
                       fontWeight: FontWeight.normal,
-                      color: Colors.black),
+                      color: Color.fromARGB(255, 7, 1, 44)),
                   textAlign: TextAlign.center,
                 )
               ],
             ),
           ),
           Padding(
-            padding:
-              const EdgeInsets.only(top: 0, bottom: 16.0, left: 16.0, right: 16.0),
+            padding: const EdgeInsets.only(
+                top: 0, bottom: 16.0, left: 16.0, right: 16.0),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
@@ -62,31 +64,37 @@ class _MyHomePageState extends State<MyHomePage> {
                     );
                   },
                   // ... other properties
-      
+
                   style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.blue,
+                      backgroundColor: Color.fromARGB(255, 252, 41, 3),
                       foregroundColor: Colors.white,
                       shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(20),
+                        borderRadius: BorderRadius.circular(10),
                       ),
                       minimumSize: Size(150, 50)),
                   child: const Text(
                     'LOGIN',
-                    style: TextStyle(
-                        fontSize: 15,
-                        fontWeight: FontWeight.normal),
-                        // color: Colors.white),
+                    style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
+                    // color: Colors.white),
                     textAlign: TextAlign.center,
                   ),
                 ),
                 TextButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (context) => const RegisterPage(
+                          title: "Login Page",
+                        ),
+                      ),
+                    );
+                  },
                   child: const Text(
                     'REGISTER',
                     style: TextStyle(
                         fontSize: 15,
-                        fontWeight: FontWeight.normal,
-                        color: Colors.blue),
+                        fontWeight: FontWeight.bold,
+                        color: Color.fromARGB(255, 7, 1, 44)),
                     textAlign: TextAlign.center,
                   ),
                 )

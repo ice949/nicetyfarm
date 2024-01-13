@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:nicetyfarm/register_screen.dart';
+import 'package:nicetyfarm/login_screen.dart';
 
-class LoginPage extends StatefulWidget {
-  const LoginPage({super.key, required this.title});
+class RegisterPage extends StatefulWidget {
+  const RegisterPage({super.key, required this.title});
 
   final String title;
 
   @override
-  State<LoginPage> createState() => _MyHomePageState();
+  State<RegisterPage> createState() => _MyHomePageState();
 }
 
-class _MyHomePageState extends State<LoginPage> {
+class _MyHomePageState extends State<RegisterPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -20,7 +20,7 @@ class _MyHomePageState extends State<LoginPage> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              const Text("Login Here!",
+              const Text("Register Here!",
                   style: TextStyle(
                       fontSize: 30.0,
                       color: Color.fromARGB(255, 252, 41, 3),
@@ -28,7 +28,7 @@ class _MyHomePageState extends State<LoginPage> {
               const Padding(
                 padding: EdgeInsets.symmetric(vertical: 25.0),
                 child: Text(
-                  "Welcome back, you've been missed!",
+                  "Hi, It's great to see you here today!",
                   style: TextStyle(
                       fontSize: 15.0,
                       color: Color.fromARGB(255, 7, 1, 44),
@@ -64,17 +64,20 @@ class _MyHomePageState extends State<LoginPage> {
                                   fontSize: 10.0, color: Color.fromARGB(255, 252, 41, 3))),
                         ),
                       )),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.end,
-                    children: [
-                      TextButton(
-                          onPressed: () {},
-                          child: const Text(
-                            "Forgot Password?",
-                            style: TextStyle(color: Color.fromARGB(255, 252, 41, 3)),
-                          ))
-                    ],
-                  ),
+                  const Padding(
+                      padding: EdgeInsets.all(8.0),
+                      child: Expanded(
+                        child: TextField(
+                          decoration: InputDecoration(
+                              border: OutlineInputBorder(
+                                borderSide: BorderSide(color: Color.fromARGB(255, 252, 41, 3)),
+                              ),
+                              hintText: "Confirm Password",
+                              suffixIcon: Icon(Icons.lock),
+                              labelStyle: TextStyle(
+                                  fontSize: 10.0, color: Color.fromARGB(255, 252, 41, 3))),
+                        ),
+                      )),
                   Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: Expanded(
@@ -88,7 +91,7 @@ class _MyHomePageState extends State<LoginPage> {
                           ),
                           child: const Padding(
                             padding: EdgeInsets.all(13.0),
-                            child: Text("Login",
+                            child: Text("Register",
                                 style: TextStyle(
                                   fontSize: 20.0,
                                 )),
@@ -100,19 +103,19 @@ class _MyHomePageState extends State<LoginPage> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  const Text("Don't have an account?"),
+                  const Text("Already have an account?"),
                   TextButton(
                       onPressed: () {
                     Navigator.of(context).push(
                       MaterialPageRoute(
-                        builder: (context) => const RegisterPage(
+                        builder: (context) => const LoginPage(
                           title: "Login Page",
                         ),
                       ),
                     );
                   },
                       child: const Text(
-                        "Sign Up",
+                        "Login",
                         style: TextStyle(color: Color.fromARGB(255, 252, 41, 3)),
                       ))
                 ],
